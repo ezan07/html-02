@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> HTML_CSS入門 </title>
+  <!--文系大学生のための_HTML_CSS入門01 -->
+  <style>
+    body { margin: 10px 50px; padding: 0 20px; border: 1px solid gray; font-size: large; } 
+    .fakespan1::first-line { background-color: lightblue;}
+
+    hr { height: 12px; width: 50%; text-align: left;
+       margin: 0; border: solid red 2px; background-color: lightgreen;}
+    
+    td, th { border: solid coral 1px;}
+     /* 1本線の罫線_collapse */
+    table { border-collapse: collapse; border: solid blue 2px;}
+    
+    .flex1{
+      display: flex;
+      margin: 5px;
+      padding: 10px;
+      border: solid blue 2px;
+    }
+    .flex1 div{ width: 100%; margin: 10px; padding: 10px; border: solid green 2px;}
+  </style>
+
+</head>
+
+<body>
+  <p> _ 文系大学生のための_HTML_CSS入門 _ https://zenn.dev/ojk/books/intro-to-html-css/viewer/web-basic</p>
+  <p>以下は、上記サイトを <strong>なぞって</strong> 
+      <mark><strong>記録</strong></mark> ・ウェブページ</p>
+  <hr>
+  <p>&#60; hr &#62;で、色付き区切り線は領域設定 style設定hr{ background-color:... height: 12px;...} </p>
+  <p> リンク url <a href="https://zenn.dev/ojk/books/intro-to-html-css/viewer/web-basic"> 文系大学生のための_HTML_CSS入門</a></p>
+
+  <p>・・黒丸で順序なしリスト要素 ul・li、<br>・・説明リスト要素 dl・dt・dd、<br>
+    ・・番号などで順序付きリスト要素 ol・li、
+    <ol start="4">
+      <li> &ensp; &ensp; &#60; ol start="4" &#62; でリスト番号４から始まる</li>
+      <li> &ensp; &ensp; リスト番号5</li>
+      <li> &ensp; &ensp; リスト番号6</li>
+    </ol>
+  </p>
+
+  <table style="float: left; margin:0 50px;">
+    <tr>                    <!--太字セル th /th -->
+      <td>11</td><td>12</td><th>13</th>
+    </tr>
+    <tr>
+      <td>21</td><td>22</td><th>23</th>
+    </tr>
+  </table>
+
+  <p>  &#60; table &#62; に、&#60; table style="float: left;" &#62; 記入で、文章は、表に回り込み <br><br>
+     表の枠線は、table要素のstyleに、&ensp;全枠線 table { border-collapse: collapse; } &ensp; 
+      外枠線 td, th { border-style: solid; } &ensp; の順に設定で、一重線
+  </p>
+
+  <p style="clear:both;"> この部分の要素に、例えば &#60; p style="clear:both;" &#62; で、回り込み解除</p>
+  
+  <p>coffe cup  &ensp;
+    <img src="images/coffe_cup_200-200.jpeg" width="5%" >
+  <p>  &#60; figure &#62; 要素は、自己完結型コンテンツを、本文から、段落で、切り離すが、テキストの一部として、インラインで配置
+    <figure>
+      <img src="images/coffe_cup_200-200.jpeg" width="5%" >
+      <figcaption> coffe cup キャプション付画像 </figcaption>
+    </figure>
+    &#60; figcaption &#62; 要素で、キャプション説明文記入
+  </p>
+  <p><a href="https://rakko.tools/tools/89/">Unicode文字変換・検索</a></p>
+  <p>main 要素は、WEB検索エンジン用に、メイン部分作成、ウェブページ内原則ひとつ</p>
+  <p>コンテナー（入れ物）要素 <br>
+    div 要素は、フローコンテンツのコンテナー・コンテンツ区分要素で、
+     css の、任意のスタイル「A」を適用するために、「A」の適用対象の、要素を集め、グループ化するのに使用 <br>
+     span 要素は、記述コンテンツの、行内コンテナー、改行なしで右に並ぶ要素の、
+     一部分の名前付けに使用し、名前を指定で_css_に記述、に使用</p>
+
+  <p>HTML、HyperText Markup Language、文・文の構造を、要素で記述<br>
+     CSS、Cascading Style Sheets、スタイルシート、HTMLの要素の色やサイズなどの、スタイルを記述<br>
+     CSSの記述方法、cssスタイルの優先順位は、1,2,3の順
+     <ol start="1">
+      <li>インラインスタイル、htmlファイル内で、style 属性で記述
+           例、&#60; h1 style="color: blue" &#62; </li>
+      <li>内部スタイルシート、htmlファイル内で、style要素で記述</li>
+      <li>外部スタイルシート、htmlファイルに呼び出される「-.CSS」ファイルに記述</li>
+    </ol>
+  </p>
+  <p>
+    css、html要素の適用は“詳細度” 1,2,3の順で優先
+    <ol start="1">
+      <li>ID セレクター、id="" </li>
+      <li>クラスセレクター、class=""</li>
+      <li>要素型セレクター、div</li>
+    </ol>
+  </p> 
+  
+  <p>スタイルの記述形式、セレクター はスタイルを適用する対象（部分）を選択する部分
+    cssの記法図.png</p>
+    <p>セレクター、優先順位
+    1,ID セレクター … id 名での指定
+    2,クラスセレクター … class 名での指定
+    3,要素型セレクター … 要素名での指定 </p>
+    <p>セレクターのあいだを 半角スペース で区切ると、要素の子孫要素、を選択
+    、p要素のclass="abc"は、半角スペースで列記 ⇒
+    p .abc { background-color: red; } </p>
+    <p>コンマ（,）で、列挙のセレクターに適用、h2要素、h4要素に設定 ⇒
+    h2, h4 { border: solid black; } </p>
+    <p class=" fakespan1 " > コンテナー（入れ物）要素の、span 要素は、<br>記述コンテンツの、行内コンテナー、改行なしで、
+      右に並ぶ要素の、一部分の名前付けに使用し、<br>名前指定で_css_にスタイル記述、に使用される。<br>
+      上記の、span 要素を装う、疑似要素 とは、<br>スタイルを適用したい部分を、
+      「span 要素で囲われた部分」のように、扱う、セレクターの表現、<br>
+      テキストの一部を、疑似的に span 要素で囲んだ、かのように、扱う、<br>
+      &ensp; &ensp; ::first-letter &ensp; &ensp; ::first-line &ensp; &ensp; ::selection &ensp; &ensp;<br>
+      &ensp; &ensp; ::first-letter 、テキストの 1 文字目を、「span 要素で囲んだ」かのような、セレクターとして機能<br>
+      &ensp; &ensp; ::first-line 1 行目を疑似要素化、ブラウザー（親要素）の幅を変更して、1 行目の範囲が変わっても、追従
+      &ensp; &ensp; （これは span 要素では対応できません）<br>
+      &ensp; &ensp; ::selection は、ユーザーがマウス等で選択したテキストを span 要素で囲んだかのようなセレクターとして機能
+      （ブラウザーのデフォルトスタイルは上書き）<br>
+      例、 class要素fakespan1 の1行目を選択 .fakespan1::first-line { background-color: lightblue; }</p>
+      
+     <p>HTML の要素は、ボックス（矩形の領域）・区分レイヤーで構成、CSS では、ボックスモデルとして操作、
+      <img width="25%" src="images/ボックス領域区分レイヤー構成.png" >
+      content コンテント padding パディング 内側の余白 border ボーダー 境界線 margin マージン 外側の余白
+     </p>
+
+  <h4>&ensp; &ensp;HPのレイアウトには、display:inline-block、ではなく フレックスボックス、display:flex、を、使用</h4>
+  <div class="flex1">
+    <div>div_1<br>width が、100% + 100% <br>display:float レイアウト崩れ、</div>
+    <p>p_1</p>
+    <div>div_2<br> display:flex 自動幅調整</div>
+    <p>p_2</p>
+  </div>
+  
+  <div>
+    <p>静的位置指定（static）スタイルの指定 position: static;<br>
+    静的位置指定、position プロパティの指定なし要素は、static・スタティックな位置・既定位置に配置される
+    </p>
+    <p>相対位置指定（relative）スタイルの指定 position: relative;<br>
+    スタティック既定位置から、動かしたい要素の position プロパティを、オフセットで位置を指定<br>
+    オフセット プロパティ指定、top／bottom／left／right<br>
+    例 .sample{ position:relative; top:30px; left:50px;}
+    </p>
+    <p>絶対位置指定（absolute）基準となる、HTML要素・Aを指定し、要素・Aの位置に対するオフセットで要素・Bの位置を指定<br>
+    手順1、位置指定したい要素・Bの、先祖要素・Aを基準の要素に選び、&ensp; &ensp;例 .sample1{position:relative;}<br>
+    &ensp; &ensp;・先祖要素・Aには、オフセットを指定しない、既定に配置<br>
+    手順2、移動対象の要素・B、 position:absolute;<br>
+    &ensp; &ensp;・オフセット プロパティ指定、top／bottom／left／right
+    &ensp; &ensp;、例 .sample2{ position:absolute; top:30px; left:50px;}
+    </p>
+  </div>
+  <table style="float: right; margin: 50px;" >
+    <tr> <!--太字セル th /th -->
+      <th>位置</th><th>基準</th><th>プロパティ値</th>
+    </tr>
+      <td>相対</td><td>その要素の静的位置</td><td>relative</td>
+    </tr>
+      <td>絶対</td><td>relativeな先祖要素</td><td>absolute</td>
+    </tr>
+      <td>固定</td><td>ビューポート</td><td>fixed</td>
+    </tr>
+      <td>粘着</td><td>静的位置→ビューポート</td><td>sticky</td>
+    </tr>
+  </table>
+
+  <p> <br>&#60; table &#62; に、&#60; table style="float: right;"&#62; 記入<br>
+    ーーー<br>
+    display プロパティを使わずに、通常フローから、外れる方法 float プロパティ<br>
+    フロート float プロパティ 浮動要素 floating element は、ビューポートの大きさで、画像への、テキストの、回り込む分量が、変る<br>
+    img要素やtable要素に、float プロパティの値,left,right 設定<br>フロートの効果は、float プロパティを適用した要素から、以後の要素、すべてに作用<br>
+    フロートの回り込みを解除は、解除する箇所の要素に、clearプロパティで、値 both を指定し、回り込み解除<br>
+    例、フロートの回り込み、設定要素imgに、img{ float:right;} 、フロートの回り込み、解除要素pに、p{ clear:both;}
+  </p>
+  <p style="clear:both;"> &ensp;&ensp;回り込みを、解除する要素に、例えば、
+      &#60; p &#62;に、&#60; p { clear:both;} &#62; を指定し、回り込みフロート解除</p>
+  <br><br><br>
+
+</body>
+
+</html>
